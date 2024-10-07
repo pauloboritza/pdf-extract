@@ -1,7 +1,6 @@
 from src.pdf_extractor import PDFExtractor
 if __name__ == "__main__":
     import argparse
-    import os
     import sys
     from pathlib import Path
 
@@ -16,7 +15,7 @@ if __name__ == "__main__":
     output = Path(args.output)
 
     # Verificar se o arquivo PDF existe
-    if not os.path.isfile(pdf):
+    if not Path.is_file(pdf):
         print(f"Erro: O arquivo '{args.pdf}' não foi encontrado.", file=sys.stderr)
         sys.exit(1)
 
